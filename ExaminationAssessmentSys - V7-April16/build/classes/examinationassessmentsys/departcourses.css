@@ -1,0 +1,76 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+     -fx-text-fill: grey;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-rotate: 90;
+    -fx-word-wrap:normal;
+  
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+    -fx-pref-height : 160;
+    -fx-padding: 5;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent; 
+    -fx-font-family: Arial;
+  -fx-background-insets: 0 1 0 1,0,0;
+   -fx-pref-width : 100;
+}
+.tab-pane .tab:selected
+{
+   
+    
+   
+    -fx-border-style: solid;
+    -fx-border-width:5px 0 0 0 ;
+    -fx-border-color:rgb(51, 153, 255) transparent transparent transparent  ;
+}
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill:  rgb(51, 153, 255);
+}
+
+
+.questionPane{
+   -fx-background-color: rgba(44, 43, 61, 1); 
+}
+
+.list-view .list-cell:even {
+-fx-background-color: transparent;
+-fx-text-fill: black;
+}
+.list-view .list-cell:odd {
+-fx-background-color: transparent;
+-fx-text-fill: black;
+}
+
+.list-view{
+     -fx-font-size: 15px;
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent; 
+}
+
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.accordion .titled-pane .title {
+    -fx-background-color: transparent ;
+    
+}
+.buttons{
+    -fx-background-color: transparent;
+    
+}

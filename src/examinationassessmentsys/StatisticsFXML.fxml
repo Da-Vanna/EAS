@@ -1,166 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="examinationassessmentsys.StatisticsFXMLController">
-    <children>
-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="760.0" styleClass="hbox-top-background">
-         <children>
-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="200.0" styleClass="logo-background">
-               <children>
-                  <ImageView fitHeight="56.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../examinationassessmentsys.images/logo-uwi-trans-STA.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="560.0" spacing="5.0" styleClass="control-background" HBox.hgrow="ALWAYS">
-               <children>
-                  <Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="560.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Button fx:id="menu" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="hamburger-button" />
-                       <!--<Button layoutX="52.0" layoutY="18.0" mnemonicParsing="false" onAction="#logoutAction" prefHeight="30.0" prefWidth="30.0" styleClass="logout-button" />-->
-                     </children>
-                  </Pane>
-               </children>
-            </HBox>
-         </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </HBox>
-      <StackPane alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
-         <children>
-            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="760.0">
-               <children>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="760.0" styleClass="vbox-panel" HBox.hgrow="ALWAYS">
-                     <children>
-                        <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="740.0" styleClass="hbox-header" VBox.vgrow="NEVER">
-                           <children>
-                              <Pane minWidth="-Infinity" prefHeight="200.0" prefWidth="760.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="12.0" styleClass="hbox-title" text="Admin" />
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                         <ScrollPane fx:id="address" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" prefHeight="366.0" prefWidth="664.0"  vbarPolicy="ALWAYS" vmin="1.0" vvalue="1.0">
-                        <content>
-                             <LineChart fx:id="invoiceChart" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="760.0" title="Sales Report" VBox.vgrow="ALWAYS">
-                          <xAxis>
-                            <CategoryAxis fx:id="ixAxis" side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis fx:id="syAxis" label="Revenue" side="LEFT" />
-                          </yAxis>
-                        </LineChart>
-                        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <PieChart fx:id="stockChart" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="380.0" title="Stock" HBox.hgrow="ALWAYS" />
-                              <BarChart fx:id="productsChart" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="380.0" title="Products" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
-                                <xAxis>
-                                  <CategoryAxis fx:id="pxAxis" side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis fx:id="pyAxis" side="LEFT" />
-                                </yAxis>
-                              </BarChart>
-                           </children>
-                        </HBox>
-                    </content>
-                          </ScrollPane>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <VBox fx:id="drawer" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="200.0" styleClass="sidebar-menu" translateX="-200.0">
-               <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="200.0" styleClass="pane-user">
-                     <children>
-                        <ImageView fitHeight="101.0" fitWidth="103.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="pane-user-pic">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/user.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="userLabel" layoutX="56.0" layoutY="121.0" styleClass="pane-user-text" text="Bond, James" />
-                     </children>
-                  </Pane>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Administrator">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/admin.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="menu-buttons" />
-                        <String fx:value="menu-buttons-selected" />
-                     </styleClass>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#productAction" prefHeight="40.0" prefWidth="200.0" styleClass="menu-buttons" text="View All">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/product.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#categoryAction" prefHeight="40.0" prefWidth="200.0" styleClass="menu-buttons" text="Table">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/category.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#supplierAction" prefHeight="40.0" prefWidth="200.0" styleClass="menu-buttons" text="Graphs">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/supplier.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#purchaseAction" prefHeight="40.0" prefWidth="200.0" styleClass="menu-buttons" text="Statistics">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/purchase.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#reportAction" prefHeight="40.0" prefWidth="200.0" styleClass="menu-buttons" text="Get Report">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../examinationassessmentsys.images/invoice.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-      </StackPane>
-   </children>
-    <stylesheets>
-        <URL value="@statisticsfxml.css"/>
+<BorderPane id="bPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="examinationassessmentsys.StatisticsFXMLController">
+   
+   <stylesheets>
+        <URL value="@statisticsfxml.css" />
     </stylesheets>
-</AnchorPane>
+    <top>
+        <AnchorPane style="-fx-background-color: rgb(51, 153, 255);" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="387.0" pickOnBounds="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" HBox.hgrow="SOMETIMES">
+               <image>
+                  <Image url="@logo-uwi-trans-STA.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Accordion AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+              <panes>
+                <TitledPane alignment="CENTER" animated="false" expanded="false" text="Go To" textFill="WHITE" wrapText="true">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                            <Button mnemonicParsing="false" onAction="#dAction" prefHeight="27.0" prefWidth="86.0" styleClass="buttons" text="Department" underline="true" />
+                             <Button layoutY="21.0" mnemonicParsing="false" onAction="#cAction" prefHeight="25.0" prefWidth="80.0" styleClass="buttons" text="Courses" underline="true" />
+                             <!-- <Button layoutY="21.0" mnemonicParsing="false" onAction="#dAction" style="-fx-background-color: trnsparent;" text="Departments" underline="true" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Button>-->
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            
+         </children>
+        </AnchorPane>
+        
+    </top>
+    <center>
+        <TabPane fx:id="tabPaneS" prefHeight="200.0" prefWidth="400.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+          <tabs>
+               <Tab fx:id="main" text="Report">
+            <content>
+              <AnchorPane fx:id="mainPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="dlreport" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="310.0" layoutY="10.0" mnemonicParsing="false" onAction="#download" text="Download Report" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="Times New Roman" size="13.0" />
+                           </font>
+                        </Button>
+                        <TextField layoutX="26.0" layoutY="184.0" prefHeight="25.0" prefWidth="163.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="246.0" AnchorPane.topAnchor="184.0" />
+                        <Text layoutX="26.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert Course Informaton:" />
+                        <Button layoutX="190.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Browse" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="184.0" />
+                        <Text fx:id="reportFor" layoutX="35.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+           <Tab fx:id="tables" text="Tables">
+             <content>
+                  <AnchorPane fx:id="tablePane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane hvalue="1.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" pannable="true" prefHeight="250.0" prefWidth="325.0" scaleShape="false" vvalue="1.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="36.0">
+                           <content>
+                              <TableView fx:id="sView" fixedCellSize="1.0">
+                                <columns>
+                                <TableColumn prefWidth="75.0" text="Year" />
+                                  <TableColumn prefWidth="75.0" text="MAX%" />
+                                  <TableColumn prefWidth="75.0" text="MIN%" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="graphs" text="Graphs">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ScrollPane fx:id="gScroll" prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            
+                          </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="pScroll" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                          <content>
+                            
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="summary" text="Summary">
+               <content>
+                  <ScrollPane fitToWidth="true" pannable="true" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <TableView fx:id="summaryT" prefHeight="400.0" prefWidth="420.0">
+                          <columns>
+                            <TableColumn prefWidth="110.0" text="Course Component &#10;     (% weighting)" />
+                            <TableColumn prefWidth="257.0" text="Mean (+SD) as % of actual component weight">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="Column 1" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                 </columns>
+                              </TableColumn>
+                          </columns>
+                           <columnResizePolicy>
+                              <!--TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />-->
+                           </columnResizePolicy>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="test">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            
+                          </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                          <content>
+                            
+                          </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <content>
+                            
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+          </tabs> 
+        </TabPane>
+    </center>
+    <bottom>
+      <HBox prefHeight="24.0" prefWidth="1028.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="224.0" text="       The University of the West Indies" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
