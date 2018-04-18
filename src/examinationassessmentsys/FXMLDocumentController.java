@@ -5,6 +5,7 @@
  */
 package examinationassessmentsys;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,12 +15,19 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -27,6 +35,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 /**
  *
@@ -34,7 +43,7 @@ import javafx.scene.image.Image;
  */
 public class FXMLDocumentController implements Initializable {
     
-     @FXML private ListView<Hyperlink> listView;
+     @FXML private ListView<Button> listView;
    // @FXML private TableColumn<Department, String> DepartName;
     
     @FXML
@@ -55,9 +64,9 @@ public class FXMLDocumentController implements Initializable {
      
     }
 
-    public ObservableList<Hyperlink>  getDepart()
+    public ObservableList<Button>  getDepart()
     {
-        ObservableList<Hyperlink> depart = FXCollections.observableArrayList();
+        ObservableList<Button> depart = FXCollections.observableArrayList();
         //depart.add(new Department("Frank"));
         //depart.add(new Department("Rebecca"));
         //depart.add(new Department("Mr."));
@@ -81,7 +90,7 @@ public class FXMLDocumentController implements Initializable {
 		// Step 2: Opening database connection
                 	try {
 
-			String msAccessDBName = "C:\\Users\\Davanna\\Desktop\\testDB.accdb";
+			String msAccessDBName = "C:/Users/Home/Desktop/EAS1.accdb";//call a function to return the string
 			String dbURL = "jdbc:ucanaccess://" + msAccessDBName; 
 
 			// Step 2.A: Create and get connection using DriverManager class
@@ -91,7 +100,7 @@ public class FXMLDocumentController implements Initializable {
 			statement = connection.createStatement();
 
 			// Step 2.C: Executing SQL & retrieve data into ResultSet
-			resultSet = statement.executeQuery("SELECT * FROM test_1");
+			resultSet = statement.executeQuery("SELECT * FROM Department");
 
 			
 			// processing returned data and printing into console
@@ -101,14 +110,23 @@ public class FXMLDocumentController implements Initializable {
 						//resultSet.getString(3) + "\t" +
 						//resultSet.getString(4));
                                                 
-                            Hyperlink link = new Hyperlink();
-                           link.setText(resultSet.getString("YearTaught"));
-                           link.setOnAction(new EventHandler<ActionEvent>() {
-                             @Override
-                             public void handle(ActionEvent e) {
-                              System.out.println("This link is clicked");
-                                 }
-                                });                    
+                            Button link = new Button();
+                           link.setText(resultSet.getString("DeptFullname"));
+                           link.setStyle("-fx-font: 16 arial; -fx-border-color: transparent; -fx-background-color: transparent;");
+                           link.setOnAction((ActionEvent e) -> {
+                               Parent home_page_p = null;
+                               try {
+                                   home_page_p = FXMLLoader.load(getClass().getResource("CourseFXML.fxml"));
+                               } catch (IOException ex) {
+                                   Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                               }
+                               Scene home_page_s = new Scene (home_page_p);
+                               home_page_s.getStylesheets().add(getClass().getResource("coursefxml.css").toExternalForm());
+                               
+                               Stage a_stage =(Stage) ((Node) e.getSource()).getScene().getWindow();
+                               a_stage.setScene(home_page_s);
+                               a_stage.setTitle("Examination Assessment System");
+                               a_stage.show();     }) ;                 
                                                 
                             depart.add(link);                    
                                              
@@ -117,7 +135,6 @@ public class FXMLDocumentController implements Initializable {
                         
 		}
 		catch(SQLException sqlex){
-			sqlex.printStackTrace();
 		}
 		finally {
 

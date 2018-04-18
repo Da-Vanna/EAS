@@ -5,8 +5,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -23,8 +21,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea layoutX="8.0" layoutY="68.0" prefHeight="288.0" prefWidth="765.0" text="This application is used to provide statistical analysis" />
-                        <Text fill="#3347e4" layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Examination Assessment System" textAlignment="CENTER" wrappingWidth="276.13671875">
+                        <TextArea layoutX="8.0" layoutY="39.0" prefHeight="132.0" prefWidth="1138.0" text="This application is used to provide statistical analysis" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0" />
+                        <Text fill="#3347e4" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Examination Assessment System" textAlignment="CENTER" wrappingWidth="276.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
@@ -37,18 +35,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                         <Label text="TableView Object">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <TableView fx:id="tableView" prefHeight="250.0" prefWidth="290.0">
-              <columns>
-                <TableColumn fx:id="DepartName" prefWidth="120.0" text="Our Departments" />
-                
-              </columns>
-            </TableView>
-                        <ListView fx:id="listView" layoutX="346.0" layoutY="-29.0" prefHeight="200.0" prefWidth="200.0" />
+                         <Text fill="#3558b9" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Science and Technology" wrappingWidth="275.13671875">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="listView" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -57,11 +49,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Engineering" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Engineering" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
                         </Text>
+                         <ListView fx:id="listViewEng" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -70,11 +63,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Law" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Law" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
                         </Text>
+                         <ListView fx:id="listViewLaw" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -83,11 +77,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Social Science" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0"  strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of Social Science" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
                         </Text>
+                         <ListView fx:id="listViewSS" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -96,11 +91,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Food and Agriculture" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0"  strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Food and Agriculture" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
-                        </Text>
+                        </Text> <ListView fx:id="listViewFA" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
+                        
                      </children>
                   </AnchorPane>
                </content>
@@ -109,11 +105,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Medical Sciences" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0"  strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Medical Sciences" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
                         </Text>
+                         <ListView fx:id="listViewMS" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0"/>
                      </children>
                   </AnchorPane>
                </content>
@@ -122,11 +119,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#3558b9" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Humanities and Education" wrappingWidth="275.13671875">
+                        <Text fill="#3558b9" layoutX="14.0" layoutY="20.0"  strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty of  Humanities and Education" wrappingWidth="275.13671875">
                            <font>
                               <Font name="Times New Roman" size="18.0" />
                            </font>
                         </Text>
+                         <ListView fx:id="listViewHE" layoutX="-22.0" layoutY="36.0" prefHeight="135.0" prefWidth="1138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
                      </children>
                   </AnchorPane>
                </content>

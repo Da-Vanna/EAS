@@ -6,12 +6,8 @@
 package examinationassessmentsys;
 
 import java.net.URL;
-import java.text.DateFormatSymbols;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,47 +15,45 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 
 /**
  * FXML Controller class
  *
  * @author Home
  */
-public class CourseFXMLController implements Initializable {
-private double xOffset = 0;
+public class StatisticsFXMLController implements Initializable {
+
+   private double xOffset = 0;
     private double yOffset = 0;
 
     @FXML
     private Button menu;
     @FXML
     private VBox drawer;
-    
-    
-   @FXML
-   private ScrollPane address;
-   
 
-   
-
+    @FXML
+    private LineChart<String, Number> invoiceChart;
+    @FXML
+    CategoryAxis ixAxis;
+    @FXML
+    private BarChart<String, Double> productsChart;
+    @FXML
+    CategoryAxis pxAxis;
     
+    @FXML
+    private PieChart stockChart;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        drawerAction();
-       address.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-       address.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
-       
-       
+        loadInvoiceChart();
+        loadProductsChart();
+        loadStockChart();
     }  
     
      private void drawerAction() {
@@ -80,7 +74,18 @@ private double xOffset = 0;
             }
         });
     }
+      private void loadInvoiceChart() {
+
+        
+    }
+      
+        private void loadProductsChart() {
+        }
+        private void loadStockChart(){
             
+        }  
+        
+        
          @FXML
     public void productAction(ActionEvent event) throws Exception {
         
@@ -106,6 +111,6 @@ private double xOffset = 0;
     public void reportAction(ActionEvent event) throws Exception {
        
     }
-        
-
+         
+    
 }
