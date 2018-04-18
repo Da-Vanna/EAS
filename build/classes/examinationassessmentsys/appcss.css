@@ -7,5 +7,44 @@
      -fx-background-position: center;     
    
  }
+ 
+ .left-box{
+    -fx-background-color: rgb(51, 153, 255);
+}
+
+.right-box{
+    -fx-background-color: rgb(255, 255, 255);
+}
+
+.tagline{
+    -fx-font-family: Century Gothic;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+}
+
+.sign-in{
+    -fx-font-family: Century Gothic;
+    -fx-text-fill: black;
+    -fx-font-size: 24;
+}
+
+.error-message {
+    -fx-font-family: Century Gothic;
+    -fx-text-fill: #ff3333;
+    -fx-font-size: 18;
+}
+
+.text-field {
+    -fx-font-family: Consolas;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18;
+    -fx-background-color:rgb(205,203,166);
+}
+
+.buttons {
+    -fx-text-fill: #000000;
+    -fx-font-family: Verdana;
+    -fx-background-color: rgb(205,203,166);
+}
 
 
